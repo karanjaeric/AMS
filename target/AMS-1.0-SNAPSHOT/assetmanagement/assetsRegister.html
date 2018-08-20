@@ -1,0 +1,46 @@
+<div class="content" style="margin-top: 60px">
+    <div class="container-fluid">
+        <div class="row">
+            <h3>Approved Assets Register</h3>
+            <input type="text" placeholder="search By Name" ng-model="searchByCode.assetName">
+            <input type="text" placeholder="search By Asset Code" ng-model="searchByCode.assetCode">
+            <!--<input type="number" placeholder="search Limit" step="1" max="20" min="1">-->
+            <a href="" data-target="#registerAsset" data-toggle="modal"  class="btn btn-primary">Register Asset</a>
+
+            <button ng-click="assetsList()" class="btn btn-info" style="background-color: #5bc0de;color:  #041203;">Load Assets</button>
+
+            <table class="table table-responsive table-striped" id="approvedAssets">
+                <tr>
+                    <th>Asset Name</th>
+                    <th>Asset Code</th>
+                    <th>Asset Description</th>
+                    <th>Asset Value</th>
+                    <th>Creating Node</th>
+                    <th>BlockChainCode</th>
+                    <th>Previous BlockChainCode</th>
+                    
+                    <th>Approving Node</th>
+                     <th>Action</th>
+                    
+                </tr>
+
+                <tr ng-repeat="asset in assetsDataList |filter:searchByCode">
+                    <td>{{asset.assetName}}</td>
+                    <td>{{asset.assetCode}}</td>
+                    <td>{{asset.assetDescription}}</td>
+                    <td>{{asset.assetValue}}</td>
+                    <td>{{asset.creatingNode}}</td>
+                    <td>{{asset.hashCode}}</td>
+                    <td>{{asset.previousHashCode}}</td>
+                    <td>{{asset.approvingNode}}</td>
+                    <td><a href="" ng-click="assetValidation(asset.id)" class="btn btn-primary">Validate</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    
+           
+</script>
+    

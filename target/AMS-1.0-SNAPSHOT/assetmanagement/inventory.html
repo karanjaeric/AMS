@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <div class="row" style="margin-top: 60px" >    
+
+
+
+        <div class="col-md-7">
+       
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Inventory Levels</h4>
+
+                </div>
+                <div class="content">
+
+                    <button ng-click="itemsList()" class="btn btn-info" style="background-color: #5bc0de;color:  #041203;">Load Inventory</button>
+                    <table class="table table-striped">
+                        <thead>
+                                     <tr>
+                            <td>
+                                <input type="text" ng-model="searchByCode.itemCode" class="form-control" placeholder="Search by Product Code" style="color:blue">
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Search by Item Name" ng-model="searchByCode.itemName">
+                            </td>
+                             
+                        </tr>
+                        <td>Item Code</td>
+                        <td>Item Name</td>
+                        <td>Remaining Units</td>
+
+                        </thead>
+               
+                        <tr ng-repeat="item in itemsDataList |filter:searchByCode">
+                            <td>{{item.itemCode}}</td>
+                            <td>{{item.itemName}}</td>
+                            <td>{{item.remaining}}</td>
+
+                        </tr>
+
+
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="header">
+
+                    <h4 class="title">Inventory Operations</h4>
+                    <p class="category">Perform Inventoy operations here</p>
+                </div>
+                <div class="content">
+
+
+
+
+                    <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal" style="background-color: #5bc0de;color:  #041203;">Add Item</button>
+                    <button type="button" class="btn btn-info " data-toggle="modal" data-target="#categoryModal" style="background-color: #5bc0de;color:  #041203;">Add Category</button><hr>
+                    <button type="button" class="btn btn-info " data-toggle="modal" data-target="#inventoryCheckoutModal" style="background-color: #5bc0de;color:  #041203;">Inventory Checkout</button>
+                    <button type="button" class="btn btn-info " data-toggle="modal" data-target="#replenishStockModal" style="background-color: #5bc0de;color:  #041203;">Replenish Stock</button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+
